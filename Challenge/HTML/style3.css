@@ -1,0 +1,69 @@
+.Cover {
+    background-image: url("http://cdn.animalhi.com/1934x1088/20180602/5b12e9390cbd3.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 50px;
+    margin: 50px;
+}
+
+main { 
+    width: 1100px;
+    margin: auto;
+    max-width: 95%;
+}
+
+body {
+    background-color:rgb(60, 211, 105); 
+    margin: auto; 
+    }
+
+h1 {
+    font-size: 30pt;
+    font-weight: bold;
+    color: rgb(250, 250, 250);
+    margin: 0px;
+    float: left;
+    padding: 0px 50px;
+    }
+h2 {
+        font-size: 18pt;
+        font-weight: bold;
+        color: rgb(243, 45, 10);
+        text-align: left;
+        float: left;
+        padding: 0px 100px;
+
+    }
+    .bar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: aquamarine
+    }
+    h3 {
+        padding: 10px 200px;
+        }
+        p {
+            padding: 10px 200px;
+
+        }
+            li   {
+        float: left;
+    }
+    li a {
+        display: block;
+        color: brown;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    li a:hover {
+        background-color: rgb(248, 233, 20)
+    }
+
+    ul { 
+        padding: 10px 20px;
+        float: left;
+
+    }
