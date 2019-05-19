@@ -5,15 +5,18 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-header {
-    width: 1100px;
-    height: 130px;
+
+body {
+    background-size: 450px;
+    margin: auto; 
     position: relative;
-     }
+}
+     
 h1 {
     text-align: left;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 18pt;
+    width: 400px;
     font-weight: bold;
     margin: 50px 150px;
         }
@@ -21,7 +24,7 @@ h1::after {
     content: "";
     height: 1px;
     background-color: lightgray;
-    width: 900px;
+    width: 450px;
     float: left;
     margin: 20px -5px;
   } 
@@ -32,47 +35,40 @@ h2 {
     visibility: hidden;
      }
 #about p {
-    width: 650px;
+    width: 420px;
     float: left;
     font-size: 12pt;
     font-style: italic;
     text-align: justify;
     color: gray;
-    margin: -120px 150px;
+    margin: -230px 170px;
 }
 
 figure {
-    background-image: url("../images/110x110.png");
-    background-size: cover;   
-    float: right;
-    margin: -100px 120px;
-    transform: rotate(-15deg);
-    height: 150px;
-    width: 150px;
+    visibility: hidden;
 }
-   
-/*****************************************************************/
+
 #competencies h3{
     float: left;
-    margin: 50px 150px;
+    padding: 20px 180px;
 }
 #competencies::after {
     content: "";
-    height: 2.25cm;
+    height: 1px;
     background-color: black;
-    width: 1px;
+    width: 3.25cm;
     float: left;
-    margin: -90px 280px;       
+    margin: -175px 170px;       
 }
 
 .skills-primary .skill[data-skill="5"] {
     background-color: teal;
     height: 0.9cm;
-    width: 4.25cm;
+    width: 3.5cm;
     font-size: 13pt;
     color: white;
     float: left;
-    margin: 50px -100px;
+    margin: 100px -275px;
     position: relative;
     padding: 10px 10px;
   }
@@ -86,11 +82,11 @@ figure {
   .skills-primary .skill[data-skill="3"] {
     background-color: teal;
     height: 0.9cm;
-    width: 4.25cm;
+    width: 3.5cm;
     font-size: 13pt;
     color: white;
     float: left;
-    margin: 50px 65px;
+    margin: 100px -133px;
     position: relative;
     padding: 10px 10px;
   }
@@ -104,11 +100,11 @@ figure {
   .skills-primary .skill[data-skill="1"] {
     background-color: teal;
     height: 0.9cm;
-    width: 4.25cm;
+    width: 3.5cm;
     font-size: 13pt;
     color: white;
     float: left;
-    margin: 50px -60px;
+    margin: 100px 10px;
     position: relative;
     padding: 10px 10px;
   }
@@ -122,11 +118,11 @@ figure {
   .skills-secondary .skill[data-skill="9"] {
     background-color: teal;
     height: 0.6cm;
-    width: 4.25cm;
+    width: 3.5cm;
     font-size: 10pt;
     color: white;
     float: left;
-    margin: 90px -431px;
+    margin: 145px -427px;
     position: relative;
     padding: 5px 10px;
   }
@@ -139,11 +135,11 @@ figure {
   .skills-secondary .skill[data-skill="5"] {
     background-color: teal;
     height: 0.6cm;
-    width: 4.25cm;
+    width: 3.5cm;
     font-size: 10pt;
     color: white;
     float: left;
-    margin: -44px 469px;
+    margin: 145px -285px;
     position: relative;
     padding: 5px 10px;
   }
@@ -156,11 +152,11 @@ figure {
   .skills-secondary .skill[data-skill="7"] {
     background-color: teal;
     height: 0.6cm;
-    width: 4.25cm;
+    width: 3.5cm;
     font-size: 10pt;
     color: white;
     float: left;
-    margin: -44px 635px;
+    margin: -89px 453px;
     position: relative;
     padding: 5px 10px;
   }
@@ -170,14 +166,6 @@ figure {
     float: right;
     position: static;
   }
-/*****************************************************************/
-p {
-    float: left;
-    font-size: small;
-    font-weight: normal;
-    line-height: auto;
-    letter-spacing: 0.5pt;
-}
 
 h3 {
     margin: 20px -10px;
@@ -186,136 +174,96 @@ h3 {
     font-weight: bold;
     font-style: italic;
 }
-/*****************************************************************/
+/*********************************************************/
+p {
+    float: left;
+    font-size: small;
+    font-weight: normal;
+    line-height: auto;
+    letter-spacing: 0.5pt;
+}
+/*********************************************************/
 #experiences {
-    text-align: left;
+    width: 400px;
     float: left;
     font-weight: 15pt;
-    size: 1000px;
-    margin: 30px 160px;
+    margin: -10px 180px;
 }  
 #experiences::after {
     content: "";
-    height: 6.75cm;
+    height: 1px;
     background-color: black;
-    width: 1px;
+    width: 3.25cm;
     float: left;
-    margin: -170px -880px;
+    margin: -323px -10px;
 }
 
+.experience-institution {
+visibility: hidden;
+}
+.experience-type {
+    float: left;
+    font-size: 13pt;
+    font-weight: bold;
+    color: teal;
+    margin: 20px 50px;
+}
+.experience-details {
+    float: left;
+    color: rgb(87, 86, 86);
+    font-size: 10pt;
+    font-weight: normal;
+    margin: -27px 150px;
+}
 #experiences h4 {
     float: left;
     text-align: left;
     font-size: 13pt;
     font-weight: bold;
     color: teal;
-    margin: -40px 150px;
-}
-.experience-institution {
-visibility: hidden;
-}
-.experience-details {
-    float: left;
-    width: 150px;
-    color: gray;
-    font-size: 10pt;
-    font-weight: normal;
-    margin: -40px 700px;
+    margin: -10px -60px;
 }
 #experiences p {
-    width: 700px;
-    height: 120px;
-    margin: 0px 150px;
+    width: 400px;
+    margin: 10px -10px;
 }
-/*****************************************************************/
+/*********************************************************/
 #education {
+    display: flex;
     float: left;
-    margin: -60px 170px;
+    margin: 50px 180px;
 }
 #education::after {
     content: "";
-    height: 6.5cm;
+    height: 1px;
     background-color: black;
-    width: 1px;
+    width: 3.5cm;
     float: left;
-    margin: -170px -880px;
+    margin: -10px -100px;
 }
 #education h4 {
     float: left;
-    font-size: 13pt; 
+    font-size: 13pt;
     font-weight: bold;
     color: teal;
-    margin: -40px 145px;
+    margin: 50px -120px;
 }
-#education .experience-details {
+#education details {
     float: left;
-    width: 150px;
     color: gray;
     font-size: 10pt;
     font-weight: normal;
-    margin: -40px 690px;
+    margin: 250px 400px;
 }
+
+/********************************/
+
 #education p {
-    float: left;
-    margin: 0px 145px;
-    width: 700px;
-    height: 120px;
-}
-/*****************************************************************/
-#hobbies {
-    float: left;
-    margin: 30px 160px;
-}
-#hobbies::after {
-    content: "";
-    height: 75px;
-    background-color: black;
-    width: 1px;
-    float: left;
-    margin: -50px 120px;
-}
-ul {
-    float: left;
-    margin: -40px 160px;
-    width: 600px;
-}
-/*****************************************************************/
-#contact h3, .contact-type, .contact-value{
     visibility: hidden;
 }
-.contact-email {
-    background-image: url("../images/email.png");
-    background-size: cover;
-    width: 80px;
-    height: 80px;
-    float: left;
-    margin: 20px 300px;
-    position: relative;
+#hobbies {
+    visibility: hidden;
 }
-.contact-phone {
-    background-image: url("../images/phone.png");
-    background-size: cover;
-    width: 80px;
-    height: 80px;
-    float: left;
-    margin: -100px 450px;
-    position: relative;
-}
-.contact-github {
-    background-image: url("../images/github.png");
-    background-size: cover;
-    width: 80px;
-    height: 80px;
-    float: left;
-    margin: -100px 600px;
-    position: relative;
-}
-.contact-facebook {
-    background-image: url("../images/facebook.png");
-    background-size: cover;
-    width: 80px;
-    height: 80px;
-    float: left;
-    margin: -100px 750px;
-    position: relative;
+#contact h3, .contact-type, .contact-value{
+    visibility: hidden;
 }
