@@ -1,0 +1,72 @@
+Basic Queries:
+1-
+SELECT Name from students;
+
+Basma
+Hasan
+Jana
+Layal
+Robert 
+
+-- At line 1:
+SELECT Name from students;
+-- Result: 6 rows returned in 4ms
+
+2-
+SELECT * from students
+WHERE Age>30;
+
+Robert	34	M	500
+Jana	33	F	500
+
+-- At line 1:
+SELECT * from students
+WHERE Age>30;
+-- Result: 2 rows returned in 16ms
+
+3-
+SELECT * from students
+WHERE Gender = 'f' and Age = 30;
+
+-- At line 1:
+SELECT * from students
+WHERE Gender = 'f' and Age = 30;
+-- Result: 0 rows returned in 4ms
+
+4-
+SELECT Points from students
+WHERE Name = 'Alex'
+
+200
+
+-- At line 1:
+SELECT Points from students
+WHERE Name = 'Alex'
+-- Result: 1 rows returned in 4ms
+
+5-
+INSERT INTO students (Name, Age, Gender, Points)
+VALUES ("Maya", 39, "F", 5000);
+
+-- At line 1:
+INSERT INTO students (Name, Age, Gender, Points)
+VALUES ("Maya", 39, "F", 5000);
+-- Result: query executed successfully. Took 16ms, 1 rows affected
+
+6-
+UPDATE students SET Points = Points +100
+WHERE Name = "Basma";
+
+-- At line 1:
+UPDATE students SET Points = Points +100
+WHERE Name = "Basma";
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+
+7-
+UPDATE students SET Points = Points -100
+WHERE Name = "Alex";
+
+-- At line 1:
+UPDATE students SET Points = Points -100
+WHERE Name = "Alex";
+-- Result: query executed successfully. Took 0ms, 1 rows affected
