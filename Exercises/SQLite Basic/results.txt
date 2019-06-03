@@ -70,3 +70,29 @@ WHERE Name = "Alex";
 UPDATE students SET Points = Points -100
 WHERE Name = "Alex";
 -- Result: query executed successfully. Took 0ms, 1 rows affected
+
+Creating Table:
+1-
+INSERT into graduates (id,name,age,gender,Points)
+SELECT * from students
+WHERE id=4
+
+2-
+UPDATE graduates
+set graduation = 08/09/2018 
+WHERE id=4
+
+-- At line 1:
+UPDATE graduates
+set graduation = 08/09/2018 
+WHERE id=4
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+
+3-
+delete from students
+WHERE id=4
+
+-- At line 1:
+delete from students
+WHERE id=4
+-- Result: query executed successfully. Took 0ms, 1 rows affected
