@@ -77,6 +77,12 @@ INSERT into graduates (id,name,age,gender,Points)
 SELECT * from students
 WHERE id=4
 
+-- At line 1:
+INSERT into graduates (id,name,age,gender,Points)
+SELECT * from students
+WHERE id=4
+-- Result: query executed successfully. Took 0ms, 1 rows affected
+
 2-
 UPDATE graduates
 set graduation = 08/09/2018 
@@ -96,3 +102,106 @@ WHERE id=4
 delete from students
 WHERE id=4
 -- Result: query executed successfully. Took 0ms, 1 rows affected
+
+Joins:
+11-
+SELECT employees.name, employees.company, companies.date
+from employees inner JOIN companies
+on employees.Company=companies.name;
+
+Marc	Google	1998
+Maria	Google	1998
+Alaa	Facebook	2004
+Hala	Snapchat	2011
+
+-- At line 2:
+SELECT employees.name, employees.company, companies.date
+    from employees inner JOIN companies
+    on employees.Company=companies.name;
+-- Result: 4 rows returned in 101ms
+
+12-
+SELECT employees.name, employees.company, companies.date
+from employees inner JOIN companies
+on employees.Company=companies.name
+where companies.Date<2000
+
+Marc	Google	1998
+Maria	Google	1998
+
+-- At line 1:
+SELECT employees.name, employees.company, companies.date
+from employees inner JOIN companies
+on employees.Company=companies.name
+where companies.Date<2000
+-- Result: 2 rows returned in 4ms
+
+13-
+SELECT Company from employees
+WHERE Role='Graphic Designer'
+
+Snapchat
+
+-- At line 1:
+SELECT Company from employees
+WHERE Role='Graphic Designer'
+-- Result: 1 rows returned in 3ms
+
+Count & Filter:
+14-
+SELECT Name from students 
+where Points=(SELECT max(Points) from students);
+
+Maya
+
+-- At line 1:
+SELECT Name from students 
+where Points=(SELECT max(Points) from students);
+-- Result: 1 rows returned in 3ms
+
+15-
+SELECT AVG(Points) FROM students
+
+1014.28571428571
+
+-- At line 1:
+SELECT AVG(Points) FROM students
+-- Result: 1 rows returned in 21ms
+
+16-
+SELECT count(id) FROM students
+WHERE Points = 500
+
+2
+
+-- At line 1:
+SELECT count(id) FROM students
+WHERE Points = 500
+-- Result: 1 rows returned in 3ms
+
+17-
+SELECT Name as namescontains_s FROM students
+WHERE Name like '%s%';
+
+Basma
+Hasan
+
+-- At line 1:
+SELECT Name as namescontains_s FROM students
+WHERE Name like '%s%';
+-- Result: 2 rows returned in 3ms
+
+18-
+SELECT Name, Points FROM students ORDER BY Points DESC;
+
+Maya	5000
+Robert	500
+Jana	500
+Basma	400
+Layal	350
+Alex	200
+Hasan	150
+
+-- At line 1:
+SELECT Name, Points FROM students ORDER BY Points DESC;
+-- Result: 7 rows returned in 5ms
