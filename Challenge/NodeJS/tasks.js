@@ -51,7 +51,7 @@ function onDataReceived(text) {
   else if (text.trim().substring(0, 3) === 'add') {
     add(text);
   }
-  else if (text === 'remove\n') {
+  else if (text === 'remove') {
     remove();
   }
   else if (text === 'list\n') {
@@ -111,7 +111,7 @@ function add(t){
  * @returns {void}
  */
 function remove(){
-  console.log('remove!')
+  myArray.pop()
 }
 
 /**
