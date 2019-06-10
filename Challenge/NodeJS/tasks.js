@@ -43,8 +43,8 @@ function onDataReceived(text) {
   else if(text.trim().substring(0, 5) === 'hello'){
     hello(text);
   }
-  else if(text === 'help\n'){
-    help();
+  else if(text.trim().substring(0, 4) === 'help'){
+    help(text);
   }
   else{
     unknownCommand(text);
@@ -79,10 +79,10 @@ function hello(c){
  *
  * @returns {void}
  */
-function help(){
+function help(t){
   var x = 
   "if you want to quit press exit or quit \nif you want to say hello just say it\nif you need help just ask for it"
-  console.log(x)
+  console.log(t.trim() + '!\n'+x)
 }
 
 /**
