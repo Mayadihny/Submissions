@@ -71,7 +71,7 @@ function hello(){
 }
 
 /**
- * command Help
+ * Open Help page
  *
  * @returns {void}
  */
