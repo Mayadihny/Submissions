@@ -37,6 +37,9 @@ function onDataReceived(text) {
   if (text === 'exit\n') {
     quit();
   }
+  if (text === 'quit\n') {
+    quit();
+  }
   else if(text === 'hello\n'){
     hello();
   }
@@ -63,7 +66,7 @@ function unknownCommand(c){
 
 /**
  * Says hello
- *
+ *console.log at the top of the function and then test writing things in the running software to see how that works
  * @returns {void}
  */
 function hello(){
@@ -76,7 +79,9 @@ function hello(){
  * @returns {void}
  */
 function help(){
-  console.log('help')
+  var x = 
+  "if you want to quit press exit or quit \nif you want to say hello just say it\nif you need help just ask for it"
+  console.log(x)
 }
 
 /**
