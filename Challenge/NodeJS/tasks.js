@@ -40,8 +40,8 @@ function onDataReceived(text) {
   if (text === 'quit\n') {
     quit();
   }
-  else if(text === 'hello\n'){
-    hello();
+  else if(text.trim().substring(0, 5) === 'hello'){
+    hello(text);
   }
   else if(text === 'help\n'){
     help();
@@ -64,13 +64,14 @@ function unknownCommand(c){
 }
 
 
+
 /**
  * Says hello
  *console.log at the top of the function and then test writing things in the running software to see how that works
  * @returns {void}
  */
-function hello(){
-  console.log('hello!')
+function hello(c){
+  console.log(c.trim() + '!')
 }
 
 /**
