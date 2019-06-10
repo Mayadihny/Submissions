@@ -51,7 +51,7 @@ function onDataReceived(text) {
   else if (text.trim().substring(0, 3) === 'add') {
     add(text);
   }
-  else if (text === 'remove') {
+  else if (text === 'remove\n') {
     remove();
   }
   else if (text === 'list\n') {
@@ -92,7 +92,7 @@ function hello(c){
  */
 function help(t){
   var x = 
-  "if you want to quit press exit or quit \nif you want to say hello just say it\nif you need help just ask for it"
+  "if you want to quit press exit or quit \nif you want to say hello just say it\nif you need help just ask for it\ntype list to check your schedule\ntype add to add items in your schedule\nyoucan remove items from your schedule by typing remove"
   console.log(t.trim() + '!\n'+x)
 }
 
