@@ -33,6 +33,8 @@ function startApp(name){
  * @param  {string} text data typed by the user
  * @returns {void}
  */
+var myArray = ['wake up early', 'dance class', 'complete the drawing', 'go shopping'];
+
 function onDataReceived(text) {
   if (text === 'exit\n') {
     quit();
@@ -45,6 +47,15 @@ function onDataReceived(text) {
   }
   else if(text.trim().substring(0, 4) === 'help'){
     help(text);
+  }
+  else if (text.trim().substring(0, 3) === 'add') {
+    add(text);
+  }
+  else if (text === 'remove\n') {
+    remove();
+  }
+  else if (text === 'list\n') {
+    list();
   }
   else{
     unknownCommand(text);
@@ -83,6 +94,35 @@ function help(t){
   var x = 
   "if you want to quit press exit or quit \nif you want to say hello just say it\nif you need help just ask for it"
   console.log(t.trim() + '!\n'+x)
+}
+
+/**
+ * add 
+ *
+ * @returns {void}
+ */
+function add(t){
+  myArray.push(t.trim().substring(3,t.trim().length))
+}
+
+/**
+ * remove 
+ *
+ * @returns {void}
+ */
+function remove(){
+  console.log('remove!')
+}
+
+/**
+ * list 
+ *
+ * @returns {void}
+ */
+function list(){
+  for (var i = 0; i < myArray.length; i++) {
+    console.log((i+1)*1+'-'+myArray[i]);
+}
 }
 
 /**
