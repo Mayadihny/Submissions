@@ -63,6 +63,9 @@ function onDataReceived(text) {
   else if (text === 'list\n') {
     list();
   }
+  else if(text === 'edit\n'){
+    edit();
+}
   else{
     unknownCommand(text);
   }
@@ -117,13 +120,17 @@ function add(t){
  * @returns {void}
  */
 function remove(){
-  myArray.pop()
-}
+      myArray.pop()
+    }
+
 function remove1(){
   myArray.shift()
 }
 function remove2(){
   myArray.splice(1, 1)
+}
+function edit(){
+  console.log(edit)
 }
 /**
  * list 
