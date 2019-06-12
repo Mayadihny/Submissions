@@ -54,6 +54,13 @@ app.get('/movies/read/by-title',(req,res)=> {
     res.send({status:200, data:movies.sort(function(a, b) { return a.title - b.title})})
  })
 
+ app.get('/movies/read/id/:id?',(req,res)=> {
+    if (req.params.id !== undefined){
+    res.send({status:200, data: req.params.id })}
+    else {res.send ({status:404, error:true, message:'the movie <ID> does not exist'})
+    }
+ })
+
 app.get('/movies/update', (req, res) => {
     res.send('<h1>Ok</h1>');
 });
