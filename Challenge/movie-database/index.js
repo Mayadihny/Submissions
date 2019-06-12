@@ -42,6 +42,18 @@ app.get('/movies/read', (req, res) => {
     res.send({status:200, data: movies})
 });
 
+app.get('/movies/read/by-date',(req,res)=> {
+    res.send({status:200, data:movies.sort(function(a, b) { return a.year - b.year})})
+ })
+
+app.get('/movies/read/by-rating',(req,res)=> {
+    res.send({status:200, data:movies.sort(function(a, b) { return a.rating - b.rating})})
+ })
+
+app.get('/movies/read/by-title',(req,res)=> {
+    res.send({status:200, data:movies.sort(function(a, b) { return a.title - b.title})})
+ })
+
 app.get('/movies/update', (req, res) => {
     res.send('<h1>Ok</h1>');
 });
