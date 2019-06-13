@@ -1,6 +1,17 @@
 const express = require("express");
-
+const mongoose = require('mongoose');
 const app= express();
+const url = 'mongodb+srv://Blossom:1234@blossom-25d2b.mongodb.net/test?retryWrites=true&w=majority';
+mongoose.Promise = global.Promise;
+mongoose.connect(url,{useNewUrlParser: true});
+
+const mySchema = new mongoose.Schema ({
+    title: String, 
+    year: Number,
+    rating: Number
+})
+
+const newSchema = mongoose.model("dataass", mySchema);
 
 const movies = [
     { title: 'Jaws', year: 1975, rating: 8 },
@@ -39,20 +50,40 @@ app.get('/movies/add?', (req, res) =>{
     var movieYear = req.query.year;
     var movieRate = req.query.rating;
     if (movieTitle!=undefined && movieYear!=undefined && movieYear.length==4 && isNaN(movieYear)==false && movieRate!=undefined ){
-        movies.push({ title: movieTitle, year: movieYear, rating: movieRate })
-        res.send({status : 200,data :movies})
-    }  
-    else if(movieRate==undefined){
-        movies.push({ title: movieTitle, year: movieYear, rating: 4 })
-        res.send({status : 200,data :movies})
-    }
-    else {
-     res.send({status:403, error:true, message:'you cannot create a movie without providing a title and a year'})
-    }
-    });
+       
+        let movie = new newSchema({ title: movieTitle, year: movieYear, rating: movieRate }); // this is modal object.
+        movie.save()
+          .then((data)=> {
+            res.send({status : 200,data :data})
+           })
+          .catch((err)=> {
+            console.log(err);
+            res.send({status:403, error:true, message:'you cannot create a movie without providing a title and a year'})
+          })}})
+    //     movies.push({ title: movieTitle, year: movieYear, rating: movieRate })
+    //     res.send({status : 200,data :movies})
+    // }  
+    // else if(movieRate==undefined){
+    //     movies.push({ title: movieTitle, year: movieYear, rating: 4 })
+    //     res.send({status : 200,data :movies})
+    // }
+    // else {
+    //  res.send({status:403, error:true, message:'you cannot create a movie without providing a title and a year'})
+    // }
+    
 
 app.get('/movies/read', (req, res) => {
-    res.send({status:200, data: movies})    
+    var User = newSchema;
+
+    User.find({})
+     .then((data)=>{
+        res.send({status:200, data: data})  
+      })
+     .catch((err)=>{
+       console.log(err);
+     })
+   
+    // res.send({status:200, data: movies})    
 });
 
 app.get('/movies/read/by-date',(req,res)=> {
@@ -74,9 +105,19 @@ app.get('/movies/read/by-title',(req,res)=> {
     }
  })
 
-app.get('/movies/update', (req, res) => {
-    res.send('<h1>Ok</h1>');
-});
+// app.get('/movies/update/;id', (req, res) =>{
+//     var movieTitle = req.query.title;
+//     var movieYear = req.query.year;
+//     var movieRate = req.query.rating;
+//     var movieId = req.query.id;
+//     if (movieId !== undefined) {
+//         movies[movieId].title=movieTitle;
+//         res.send({data:movies})
+//     }
+//     else if (movieId !== undefined) {
+//         res.send ({movieRate = NEW_RATING && movieTitle == NEW_TITLE})
+//     }
+//     });
 
 app.get('/movies/delete/:id',(req,res)=> {
     var ID = req.params.id 
