@@ -38,10 +38,14 @@ app.get('/movies/add?', (req, res) =>{
     var movieTitle = req.query.title;
     var movieYear = req.query.year;
     var movieRate = req.query.rating;
-    if (movieTitle!=undefined && movieYear!=undefined && movieYear.length==4 && isNaN(movieYear)==false ){
+    if (movieTitle!=undefined && movieYear!=undefined && movieYear.length==4 && isNaN(movieYear)==false && movieRate!=undefined ){
         movies.push({ title: movieTitle, year: movieYear, rating: movieRate })
         res.send({status : 200,data :movies})
     }  
+    else if(movieRate==undefined){
+        movies.push({ title: movieTitle, year: movieYear, rating: 4 })
+        res.send({status : 200,data :movies})
+    }
     else {
      res.send({status:403, error:true, message:'you cannot create a movie without providing a title and a year'})
     }
@@ -74,9 +78,15 @@ app.get('/movies/update', (req, res) => {
     res.send('<h1>Ok</h1>');
 });
 
-app.get('/movies/delete', (req, res) => {
-    res.send('<h1>Ok</h1>');
-});
+app.get('/movies/delete/:id',(req,res)=> {
+    var ID = req.params.id 
+    if (ID>0 && ID <= movies.length)
+    { movies.splice(ID-1 ,1);
+    res.send({status:200, data: movies})
+}
+    else {res.send ({status:404, error:true, message:'the movie'+ ID +' does not exist'})
+    }
+ });
 
 const PORT = process.env.PORT || 5000;
 
